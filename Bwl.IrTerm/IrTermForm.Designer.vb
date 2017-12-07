@@ -71,12 +71,13 @@ Partial Class IrTermForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbResults.BackColor = System.Drawing.Color.White
+        Me.tbResults.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.tbResults.Location = New System.Drawing.Point(5, 33)
         Me.tbResults.Multiline = True
         Me.tbResults.Name = "tbResults"
         Me.tbResults.ReadOnly = True
         Me.tbResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tbResults.Size = New System.Drawing.Size(567, 446)
+        Me.tbResults.Size = New System.Drawing.Size(814, 458)
         Me.tbResults.TabIndex = 3
         '
         'cbAddTime
@@ -111,7 +112,7 @@ Partial Class IrTermForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(577, 484)
+        Me.ClientSize = New System.Drawing.Size(824, 496)
         Me.Controls.Add(Me.bCclear)
         Me.Controls.Add(Me.cbAddTime)
         Me.Controls.Add(Me.tbResults)

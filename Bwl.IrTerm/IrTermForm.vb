@@ -22,7 +22,7 @@ Public Class IrTermForm
                 Dim line = port.ReadLine.Trim
                 Dim filteredLine = ""
                 For Each ch In line
-                    If ch > " " AndAlso ch < "~" Then
+                    If ch >= " " AndAlso ch < "~" Then
                         filteredLine += ch
                     End If
                 Next
@@ -68,6 +68,22 @@ Public Class IrTermForm
             End If
         End If
 
+        Try
+            cbConnect.Checked = port.IsOpen
+        Catch ex As Exception
+            port.Write("1")
+            cbConnect.Checked = False
+            MsgBox("Port was disconnected")
+            Try
+                port.Close()
+            Catch ex1 As Exception
+            End Try
+        End Try
+        If cbConnect.Checked Then
+            tbResults.BackColor = Color.LightGreen
+        Else
+            tbResults.BackColor = Color.Pink
+        End If
     End Sub
 
     Private Sub cbConnect_CheckedChanged(sender As Object, e As EventArgs) Handles cbConnect.CheckedChanged
@@ -75,11 +91,15 @@ Public Class IrTermForm
             If cbPorts.Text = "" Then
                 cbConnect.Checked = False
             Else
-                If port.IsOpen Then port.Close()
-                port.PortName = cbPorts.Text
-                regPortName.Value = port.PortName
-                port.BaudRate = 2400
-                port.Open()
+                Try
+                    If port.IsOpen Then port.Close()
+                    port.PortName = cbPorts.Text
+                    regPortName.Value = port.PortName
+                    port.BaudRate = 2400
+                    port.Open()
+                Catch ex As Exception
+                    MsgBox("Port Open failed: " + ex.Message, vbExclamation)
+                End Try
             End If
         Else
             If port.IsOpen Then port.Close()
