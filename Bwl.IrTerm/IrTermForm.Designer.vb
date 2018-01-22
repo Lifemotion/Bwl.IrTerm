@@ -31,6 +31,7 @@ Partial Class IrTermForm
         Me.cbAddTime = New System.Windows.Forms.CheckBox()
         Me.bCclear = New System.Windows.Forms.Button()
         Me.portsRefresh = New System.Windows.Forms.Timer(Me.components)
+        Me.cbWriteLog = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'cbPorts
@@ -108,11 +109,26 @@ Partial Class IrTermForm
         Me.portsRefresh.Enabled = True
         Me.portsRefresh.Interval = 1000
         '
+        'cbWriteLog
+        '
+        Me.cbWriteLog.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbWriteLog.Appearance = System.Windows.Forms.Appearance.Button
+        Me.cbWriteLog.AutoSize = True
+        Me.cbWriteLog.Checked = True
+        Me.cbWriteLog.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbWriteLog.Location = New System.Drawing.Point(756, 5)
+        Me.cbWriteLog.Name = "cbWriteLog"
+        Me.cbWriteLog.Size = New System.Drawing.Size(63, 23)
+        Me.cbWriteLog.TabIndex = 6
+        Me.cbWriteLog.Text = "Write Log"
+        Me.cbWriteLog.UseVisualStyleBackColor = True
+        '
         'IrTermForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(824, 496)
+        Me.Controls.Add(Me.cbWriteLog)
         Me.Controls.Add(Me.bCclear)
         Me.Controls.Add(Me.cbAddTime)
         Me.Controls.Add(Me.tbResults)
@@ -134,4 +150,5 @@ Partial Class IrTermForm
     Friend WithEvents cbAddTime As CheckBox
     Friend WithEvents bCclear As Button
     Friend WithEvents portsRefresh As Timer
+    Friend WithEvents cbWriteLog As CheckBox
 End Class

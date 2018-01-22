@@ -30,6 +30,9 @@ Public Class IrTermForm
                               If cbFilter.Checked Then line = filteredLine.Trim
                               If line.Length > 0 Then
                                   If cbAddTime.Checked Then line = Now.ToLongTimeString + ": " + line
+                                  If cbWriteLog.Checked Then
+                                      IO.File.AppendAllLines(Application.StartupPath + "\log.txt", {line})
+                                  End If
                                   tbResults.Text += line + vbCrLf
                                   tbResults.SelectionStart = tbResults.Text.Length
                                   tbResults.ScrollToCaret()
