@@ -72,7 +72,7 @@ Partial Class IrTermForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbResults.BackColor = System.Drawing.Color.White
-        Me.tbResults.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.tbResults.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.tbResults.Location = New System.Drawing.Point(5, 33)
         Me.tbResults.Multiline = True
         Me.tbResults.Name = "tbResults"
